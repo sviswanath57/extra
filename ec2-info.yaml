@@ -15,11 +15,11 @@
 - name: Ansible Play
   hosts: localhost
   tasks:
-  - name: launching AWS instance using Ansible
-    ec2:
-      # key_name: mumbai
-      region: us-east-1
-      instance_type: t2.micro
-      image: ami-03265a0778a880afb
-      instance_tags:
-        Name: Daemo_server
+    - name: launching AWS instance using Ansible
+      ec2:
+        # key_name: mumbai
+        region: us-east-1
+        instance_type: t2.micro
+        image: ami-03265a0778a880afb
+        instance_tags:
+          Name: Daemo_server
