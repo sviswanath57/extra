@@ -1,6 +1,6 @@
 - name: Test ec2 info
-  hosts: local
-  connection: local
+  hosts: localhost
+  #connection: local
 
   tasks:
     - name: Get EC2 Info
