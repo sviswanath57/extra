@@ -16,7 +16,7 @@
   hosts: localhost
   tasks:
     - name: launching AWS instance using Ansible
-      ec2:
+      amazon.aws.ec2_instance:
         # key_name: mumbai
         region: us-east-1
         instance_type: t2.micro
