@@ -1,0 +1,4 @@
+- name: Gather information about a particular instance using ID
+  amazon.aws.ec2_instance_info:
+    instance_ids:
+      - i-076f96378600c354a
