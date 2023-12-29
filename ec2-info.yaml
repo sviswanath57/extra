@@ -1,4 +1,15 @@
-- name: Gather information about a particular instance using ID
-  amazon.aws.ec2_instance_info:
-    instance_ids:
-      - i-076f96378600c354a
+---
+- name: Test ec2 info
+  hosts: local
+  connection: local
+
+  tasks:
+    - name: Get EC2 Info
+      ec2_instance_info:
+        filters:
+          "tag:Name": "ansible*"
+      register: ec2_name
+
+    - name: Get instance IP addresses.
+      debug:
+          msg: "{{ item.0 }} | {{ item.1 }} | {{ item.2 }}"
