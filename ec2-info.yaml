@@ -23,11 +23,26 @@
 #         image_id: ami-0c7217cdde317cfec
 #         instance_tags:
 #           Name: Daemo_server
+# - name: Ansible Play
+#   hosts: localhost
+#   tasks:
+#     - name: restart a particular instance by its ID
+#       amazon.aws.ec2_instance:
+#         state: restarted
+#         instance_ids:
+#           - i-076f96378600c354a
 - name: Ansible Play
   hosts: localhost
   tasks:
-    - name: restart a particular instance by its ID
+    - name: start an instance with a public IP address
       amazon.aws.ec2_instance:
-        state: restarted
-        instance_ids:
-          - i-076f96378600c354a
+        name: "public-compute-instance"
+        # key_name: "prod-ssh-key"
+        vpc_subnet_id: subnet-08bbb2c0becc01597
+        instance_type: t2.micro
+        security_group: sg-00c14e6d6ba354df2
+        network:
+          assign_public_ip: true
+        image_id: ami-03265a0778a880afb
+        tags:
+          Environment: Testing
