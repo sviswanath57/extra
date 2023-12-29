@@ -15,8 +15,7 @@
 - name: Ansible Play
   hosts: localhost
   tasks:
-  - name:   launching AWS instance using Ansible
-
+  - name: launching AWS instance using Ansible
     ec2:
       # key_name: mumbai
       region: us-east-1
