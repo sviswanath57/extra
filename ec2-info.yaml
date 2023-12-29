@@ -1,14 +1,26 @@
-- name: Test ec2 info
+# - name: Test ec2 info
+#   hosts: localhost
+#   #connection: local
+
+#   tasks:
+#     - name: Get EC2 Info
+#       ec2_instance_info:
+#         filters:
+#           "tag:Name": "ansible"
+#       register: ec2_name
+
+#     - name: Get instance IP addresses.
+#       debug:
+#           msg: "ec2_name"
+- name: Ansible Play
   hosts: localhost
-  #connection: local
-
   tasks:
-    - name: Get EC2 Info
-      ec2_instance_info:
-        filters:
-          "tag:Name": "ansible"
-      register: ec2_name
+  - name:   launching AWS instance using Ansible
 
-    - name: Get instance IP addresses.
-      debug:
-          msg: "ec2_name"
+    ec2:
+      # key_name: mumbai
+      region: us-east-1
+      instance_type: t2.micro
+      image: ami-03265a0778a880afb
+      instance_tags:
+        Name: Daemo_server
