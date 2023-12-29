@@ -20,6 +20,6 @@
         # key_name: mumbai
         region: us-east-1
         instance_type: t2.micro
-        image: ami-03265a0778a880afb
+        image: aami-0c7217cdde317cfec
         instance_tags:
           Name: Daemo_server
