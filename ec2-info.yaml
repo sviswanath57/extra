@@ -7,9 +7,9 @@
     - name: Get EC2 Info
       ec2_instance_info:
         filters:
-          "tag:Name": "ansible*"
+          "tag:Name": "ansible"
       register: ec2_name
 
     - name: Get instance IP addresses.
       debug:
-          msg: "{{ item.0 }} | {{ item.1 }} | {{ item.2 }}"
+          msg: "ec2_name"
