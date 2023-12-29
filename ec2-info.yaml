@@ -1,4 +1,3 @@
----
 - name: Test ec2 info
   hosts: local
   connection: local
