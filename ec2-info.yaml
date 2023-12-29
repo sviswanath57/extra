@@ -37,6 +37,7 @@
     - name: start an instance with a public IP address
       amazon.aws.ec2_instance:
         name: "public-compute-instance"
+        region: us-east-1
         # key_name: "prod-ssh-key"
         vpc_subnet_id: subnet-08bbb2c0becc01597
         instance_type: t2.micro
